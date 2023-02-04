@@ -44,6 +44,12 @@
 } */
 import {query} from '../services/db';
 
+export const onUserLogin = (req,res,next)=>{
+
+};
+
+
+
 export const getAllUsers = async (req,res,next) =>{
   let [result] =  await query('SELECT * FROM customers');
   return res.status(200).json({result});
@@ -67,6 +73,10 @@ export const updateUserById =async (req,res,next) =>{
     return res.status(500).json({message: 'Internal Server Error.'})
   }
   return finalResult;
+}
+
+export const onUploadFile = (req,res,next)=>{;
+  return res.json('File Received!.');
 }
 
 
